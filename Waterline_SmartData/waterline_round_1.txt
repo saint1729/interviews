@@ -1,0 +1,92 @@
+
+
+// function to return a boolean taking an input string. returns true if string is palindrome. otherwise false.
+
+
+public boolean isPalindrome(String s) {
+    
+    if((s == null) || (s.length() < 2)) {
+        return true;
+    }
+    
+    int n = s.length();
+    
+    for(int i = 0; i < n/2; i++) {
+        if((Character.toLowecase(s.charAt(i)) != (Character.toLowecase(s.charAt(n-i-1))))) {
+            return false;
+        }
+    }
+    
+    return true;
+    
+}
+
+
+// function to print binary tree in postorder traversal
+
+
+
+public void postOrderTraversal(TreeNode root) {
+  
+    if(root == null) {
+        return;
+    }
+    
+    postOrderTraversal(root.left);
+    postOrderTraversal(root.right);
+    System.out.println(root.value);
+}
+
+
+// if first is same as any of the rows in the next n-1 rows
+// if second is same as any of the rows in the next n-2 rows
+// .
+// .
+
+
+// combination of Rate Schedule, Person Job, Person Organization, Person Start Date and Person End Date  (hashcode)
+// Sort all the 
+// [hashcode, index], sort based on hashcode. 
+
+// [aa, 0], [aa, 5], [ab, 4], cc, dd, dd, dd, ..
+
+
+
+// table name student. 3 columns.
+// 1) Name
+// 2) subject
+// 3) score
+
+
+
+Alpha   Math        10
+Alpha   Physics     9
+Beta    Math         9
+Beta    Physics      8
+
+
+Math      9.5
+Physics   8.5
+
+
+
+
+select t1.subject, avg(t1.marks) from students t1 group by t1.subject having avg(t1.marks) >= 8.5;
+
+select t1.student, t1.subject from students t1 where t1.marks > (
+    select avg(t2.marks) from students t2
+    where t1.subject=t2.subject
+    group by t2.subject
+)
+
+
+
+
+
+
+
+
+
+
+
+
